@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Barlow_Condensed } from 'next/font/google'
+
+const barlowCondensed = Barlow_Condensed({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  variable: '--font-barlow-condensed',
+})
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,14 +27,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="fr" className={`${barlowCondensed.variable} ${geistSans.variable} ${geistMono.variable}`}>
+      <body className="font-sans antialiased">
         {children}
       </body>
     </html>

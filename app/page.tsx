@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { GraduationCap, Scale, Utensils, Leaf, Plane, Dumbbell } from "lucide-react"
@@ -7,47 +8,51 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-12">
-        <h1 className="text-5xl font-bold text-center mb-12 text-black">
-          QueryBot
-        </h1>
-        
+        <div className="flex justify-center items-center mb-12">
+          <Image src="/logo.png" alt="QueryBot" width={80} height={80} />
+          <h1 className="text-6xl font-bold text-center ml-4 text-black font-barlow-condensed">
+            QueryBot
+          </h1>
+        </div>
+
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <AssistantCard 
+          <AssistantCard
             title="StudyBuddy"
             description="Votre compagnon pour la recherche et la rédaction académique"
             icon={<GraduationCap className="w-8 h-8 text-yellow-500" />}
             color="bg-yellow-100"
             link="/StudyBuddy"
           />
-          <AssistantCard 
+          <AssistantCard
             title="LegalEagle"
             description="Votre assistant juridique virtuel pour le droit français"
             icon={<Scale className="w-8 h-8 text-blue-500" />}
             color="bg-blue-100"
             link="/LegalEagle"
           />
-          <AssistantCard 
+          <AssistantCard
             title="RecipeMaster"
             description="Votre assistant culinaire pour des recettes et des conseils de cuisine"
             icon={<Utensils className="w-8 h-8 text-red-500" />}
             color="bg-red-100"
             link="/RecipeMaster"
           />
-          <AssistantCard 
+          <AssistantCard
             title="EcoExplorer"
             description="Votre guide pour des solutions écologiques et durables"
             icon={<Leaf className="w-8 h-8 text-green-500" />}
             color="bg-green-100"
             link="/EcoExplorer"
           />
-          <AssistantCard 
+          <AssistantCard
             title="TravelScout"
             description="Votre compagnon de planification de voyage"
             icon={<Plane className="w-8 h-8 text-purple-500" />}
             color="bg-purple-100"
             link="/TravelScout"
           />
-          <AssistantCard 
+          <AssistantCard
             title="FitnessFinder"
             description="Votre coach personnel pour des programmes d'entraînement et conseils de fitness"
             icon={<Dumbbell className="w-8 h-8 text-orange-500" />}
